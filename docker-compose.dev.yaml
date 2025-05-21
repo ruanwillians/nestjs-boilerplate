@@ -1,0 +1,32 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: dockerfile.dev
+    container_name: nestjs_app
+    ports:
+      - '3001:3001'
+    volumes:
+      - ./:/app
+      - ./node_modules:/app/node_modules
+    env_file:
+      - .env.development
+    restart: always
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:15
+    container_name: postgres_db
+    restart: always
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: mydatabase
+    ports:
+      - '5432:5432'
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
