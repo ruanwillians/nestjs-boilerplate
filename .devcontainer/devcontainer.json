@@ -10,10 +10,7 @@
     "Prisma.prisma"
   ],
   "settings": {
-    // Habilita formatar ao salvar
     "editor.formatOnSave": true,
-
-    // Prettier como formatador padrão para linguagens específicas
     "[typescript]": {
       "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
@@ -23,8 +20,6 @@
     "[json]": {
       "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-
-    // Habilita ESLint
     "eslint.enable": true,
     "eslint.format.enable": true,
     "editor.codeActionsOnSave": {
